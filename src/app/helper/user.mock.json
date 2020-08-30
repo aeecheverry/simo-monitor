@@ -1,0 +1,19 @@
+{
+    "id" : "aecheverry",
+    "name" : "Andrés Echeverry",
+    "email" : "aecheverry@formax.cl",
+    "role" : "monitor_root",
+    "mainGroup" : {
+        "id" : "simoo",
+        "name" : "SIMOO"
+    },
+    "authentication" : {
+        "mode" : "UserPassword",
+        "credentials" : {
+            "key" : "aecheverry",
+            "secret" : "secret",
+            "enabled" : true
+        }
+    },
+    "sessionToken" : "fake-jwt-token"
+}
