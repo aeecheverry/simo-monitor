@@ -48,3 +48,7 @@ mat-toolbar {
     margin: 3px 15px;
     font-size: 27px;
 }
+
+button:focus{
+    outline: 0;
+}
