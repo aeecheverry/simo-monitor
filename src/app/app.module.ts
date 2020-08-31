@@ -27,6 +27,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
+import { AdminModule} from './admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AdminModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
