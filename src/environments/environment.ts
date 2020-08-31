@@ -4,8 +4,17 @@
 
 export const environment = {
   production: false,
+  apiHost: "https://r09o8rvlz1.execute-api.us-west-1.amazonaws.com/dev",
+  kibana_endpoint: "simoo-elasticsearch.omnixsystem.com",
+  
+  path_transactions_list_services: "/transactions/services",
+  path_transactions_list: "/transactions",
 
-  securityAPI: "",
+  path_client: "/client",
+  path_client_list: "/client/list",
+
+  path_billing_activity: "/billing/activity",
+  path_billing_invoices: "/billing/invoices"
 };
 
 /*

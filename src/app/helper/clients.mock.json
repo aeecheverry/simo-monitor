@@ -1,0 +1,102 @@
+[{
+    "id" : "wom",
+    "name" : "wom",
+    "dashboards" : {
+        "orders" : {
+            "id" : "2c319f60-dc52-11ea-aef9-5bad6cdccc6b"
+        },
+        "transactions" : {
+            "id" : "5d396830-ddd4-11ea-aef9-5bad6cdccc6b"
+        }
+    },
+    "country" : "chile",
+    "deployment" : {
+        "type" : "standard",
+        "version" : "3.1.0"
+    },
+    "integrations" : {
+        "oom" : {
+            "ram" : "1GB"
+        },
+        "oim" : {
+            "ram" : "1GB"
+        },
+        "mongodb" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        },
+        "elasticsearch" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        }
+    },
+    "logoUrl" : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/WOM_Chile.svg/92px-WOM_Chile.svg.png"
+},
+{
+    "id" : "logytech",
+    "name" : "logytech",
+    "dashboards" : {
+        "orders" : {
+            "id" : "e129ad70-dc54-11ea-aef9-5bad6cdccc6b"
+        },
+        "transactions" : {
+            "id" : ""
+        }
+    },
+    "deployment" : {
+        "type" : "standard",
+        "version" : "3.1.0"
+    },
+    "country" : "colombia",
+    "integrations" : {
+        "oom" : {
+            "ram" : "1GB"
+        },
+        "oim" : {
+            "ram" : "1GB"
+        },
+        "mongodb" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        },
+        "elasticsearch" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        }
+    },
+    "logoUrl" : "https://eventos.fasecolda.com/assets/upload/sponsor/59d4f1c6c9a08.jpg"
+},
+{
+    "id" : "xinwo",
+    "name" : "xinwo",
+    "dashboards" : {
+        "orders" : {
+            "id" : ""
+        },
+        "transactions" : {
+            "id" : ""
+        }
+    },
+    "deployment" : {
+        "type" : "standard",
+        "version" : "3.1.0"
+    },
+    "country" : "colombia",
+    "integrations" : {
+        "oom" : {
+            "ram" : "1GB"
+        },
+        "oim" : {
+            "ram" : "1GB"
+        },
+        "mongodb" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        },
+        "elasticsearch" : {
+            "ram" : "2GB",
+            "storage" : "60GB"
+        }
+    },
+    "logoUrl" : "https://w7.pngwing.com/pngs/821/36/png-transparent-computer-icons-xing-social-network-xing-logo-angle-text-logo.png"
+}]

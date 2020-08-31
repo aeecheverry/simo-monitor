@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/auth.service';
 import { User } from '../models/user';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
+  providers: [ClientService]
 })
 export class AdminComponent implements OnInit {
   currentUser: User;
@@ -16,10 +18,11 @@ export class AdminComponent implements OnInit {
     private authenticationService: AuthenticationService
   ) { 
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    this.profileName = this.currentUser.name.split(' ').map(name => name[0]).join('').toUpperCase();
   }
 
   ngOnInit(): void {
-    this.profileName = this.currentUser.name.split(' ').map(name => name[0]).join('').toUpperCase();
+    
   }
 
   logout() {

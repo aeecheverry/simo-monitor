@@ -13,6 +13,9 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { ReportsComponent } from './reports/reports.component';
 import { BillingComponent } from './billing/billing.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from '../helper/jwt.interceptor';
+import { ErrorInterceptor } from '../helper/error.interceptor';
 
 
 @NgModule({
@@ -30,6 +33,10 @@ import { BillingComponent } from './billing/billing.component';
     MatListModule,
     MatIconModule,
     MatDividerModule
+  ],
+  providers:[
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ]
 })
 export class MonitorModule { }

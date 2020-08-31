@@ -19,6 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 import { FormsModule } from '@angular/forms';
 
@@ -34,7 +35,7 @@ import { AdminModule} from './admin/admin.module';
     LoginComponent,
     ProfileComponent,
     HomeComponent,
-    AdminComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -48,14 +49,15 @@ import { AdminModule} from './admin/admin.module';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    //{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    //{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
+    //fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

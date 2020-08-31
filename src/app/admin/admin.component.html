@@ -1,12 +1,12 @@
 <mat-toolbar class="mat-elevation-z2 main-nav">
     
     <mat-icon class="logo">dashboard</mat-icon>
-    <a class="home" routerLink="">SIMOO</a>
+    <a class="home" routerLink="../client">SIMOO</a>
   
     <div class="spacer"></div>
     <mat-icon class="notifications-icon"  matBadge="8" matBadgePosition="before">notifications_none</mat-icon>
     
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="profile">
         <div class="profile-image" >
             <div class="name">
                 {{profileName}}

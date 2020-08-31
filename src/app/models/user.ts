@@ -7,13 +7,5 @@ export class User {
         id : string,
         name : string
     }
-    authentication: {
-        mode : string,
-        credentials : {
-            enabled : boolean,
-            key : string,
-            secret: string
-        }
-    };
-    sessionToken: string
+    token: string
 }

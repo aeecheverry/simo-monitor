@@ -9,8 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    component: HomeComponent
   },
   {
     path:'login',
@@ -18,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'client',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '' },

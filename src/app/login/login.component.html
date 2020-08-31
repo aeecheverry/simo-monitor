@@ -1,24 +1,30 @@
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Login
-        </button>
-        <a routerLink="/register" class="btn btn-link">Register</a>
-    </div>
-</form>
+<div class="main-content">
+    <mat-card class="mat-elevation-z6">
+        <mat-card-content class="login-card">
+                    <div class="loginImageContainer" data-tilt="">
+                        <img style="width: 350px;height: 350px;" src="../../assets/login.png" alt="Login Image">
+                    </div>
+                    <form [formGroup]="loginForm" class="loginForm" (ngSubmit)="onSubmit()">
+                        <h2 class="loginFormTitle">Member Login</h2>
+                        <div class="form-group">
+                            <input type="text" formControlName="username" placeholder="username" class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="password" placeholder="password" class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="loading" class="btn btn-primary loginButton">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Login
+                            </button>
+                        </div>
+                    </form>
+        </mat-card-content>
+    </mat-card>
+</div>

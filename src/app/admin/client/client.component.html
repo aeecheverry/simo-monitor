@@ -1,1 +1,51 @@
-<p>client works!</p>
+
+  <div class="container" style="padding-top: 20px;">
+    <div class="row">
+      <div class="col-4" *ngFor="let client of clients">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url('+ client.logoUrl +')'"></div>
+            <mat-card-title><a routerLink="{{client.id}}" style="text-decoration: none;" (click)="onClickClient(client)">{{client.name | titlecase}}</a></mat-card-title>
+            <mat-card-subtitle>
+              {{client.deployment.type}} <span style="background-color:rgb(202, 202, 202);border-radius: 2px;color: black;padding:2px">v{{client.deployment.version}}</span>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-divider></mat-divider>
+            <div class="container" style="padding-top: 5px;">
+              <div class="row" style="padding-left:10px;padding-top: 5px;padding-bottom: 5px;">
+                <mat-icon style="color: rgb(0, 75, 236);">room</mat-icon> {{client.country | titlecase}}
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h6 class="integration-title">OOM</h6>
+                  <p>{{client.integrations.oom.ram}} RAM</p>
+                </div>
+                <div class="col-6">
+                  <h6 class="integration-title">OIM</h6>
+                  <p>{{client.integrations.oim.ram}} RAM</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h6 class="integration-title">MongoDB</h6>
+                  <p>{{client.integrations.mongodb.ram}} RAM {{client.integrations.mongodb.storage}} Storage</p>
+                </div>
+                <div class="col-6">
+                  <h6 class="integration-title">Elasticsearch</h6>
+                  <p>{{client.integrations.elasticsearch.ram}} RAM {{client.integrations.elasticsearch.storage}} Storage</p>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <span mat-fab color="primary" aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </span>
+          </mat-card-actions>
+        </mat-card>
+      </div>  
+    </div>
+  </div>
+  
+  
