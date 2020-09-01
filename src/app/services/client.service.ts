@@ -30,7 +30,8 @@ export class ClientService {
     getClients(): Observable<any> { 
         const path = environment.path_client_list;
         const clients_endpoint = environment.apiHost+path;
-        return this.http.get<any>(clients_endpoint).pipe(map(clients => {
+        return this.http.get<any>(clients_endpoint).pipe(map(data => {
+            let clients = data.message;
             localStorage.setItem('clients', JSON.stringify(clients));
             this.currentClientsSubject.next(clients);
             return clients;
@@ -41,10 +42,10 @@ export class ClientService {
         return this.currentClientSubject.value;
     }
 
-    setClient(client){
-        if(client && client.id){
-            localStorage.setItem(client.id, JSON.stringify(client));
-        }
-    }
+    getClient(id): Client { 
+        let clients = JSON.parse(localStorage.getItem('clients')) || [];
+        let client = clients.find(client => client.id === id);
+        return client;
+    } 
 
 }

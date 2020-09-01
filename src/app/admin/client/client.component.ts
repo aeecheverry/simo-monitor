@@ -19,16 +19,25 @@ export class ClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clientService.getClients()
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.clients = data.message;
-        },
-        error => {
-            //this.alertService.error(error);
-        }
-    );
+    this.getClients();
+  }
+
+  getClients(){
+    let clients = JSON.parse(localStorage.getItem('clients'));
+    if(!clients){
+      this.clientService.getClients()
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.clients = data;
+          },
+          error => {
+              //this.alertService.error(error);
+          }
+      );
+    }else{
+      this.clients = clients;
+    }
   }
 
   onClickClient(client){

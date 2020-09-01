@@ -1,7 +1,14 @@
 export class Client {
     id: string;
     name: string;
-    dashboards: object[];
+    dashboards: {
+      orders:{
+          id:string
+      },
+      transactions:{
+          id:string
+      } 
+    };
     country: string;
     deployment: {
         type: string,
