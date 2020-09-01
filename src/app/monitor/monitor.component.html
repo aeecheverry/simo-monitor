@@ -1,7 +1,10 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" opened class="mat-elevation-z1">
         <mat-nav-list style="padding-top:10px;">
-            <a mat-list-item routerLink="../profile"><mat-icon class="profileIcon">account_circle</mat-icon><span class="username">{{currentUser.name}}</span></a>
+            <a mat-list-item routerLink="../profile">
+                <mat-icon class="profileIcon">account_circle</mat-icon>
+                <span class="username">{{currentUser.name}}</span>
+            </a>
         </mat-nav-list>
         <mat-divider style="width: 90%;margin-left: 5%;"></mat-divider>
         <mat-nav-list *ngFor="let item of menu">

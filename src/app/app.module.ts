@@ -3,13 +3,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// used to create fake backend
-import { fakeBackendProvider } from './helper/facke-backend';
-
-import { JwtInterceptor } from './helper/jwt.interceptor';
-import { ErrorInterceptor } from './helper/error.interceptor';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +22,8 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { AdminModule} from './admin/admin.module';
-import { NotificationsComponent } from './components/notifications/notifications.component';
+//import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +31,7 @@ import { NotificationsComponent } from './components/notifications/notifications
     ProfileComponent,
     HomeComponent,
     AdminComponent,
-    NotificationsComponent
+    //TransactionsTableComponent
   ],
   imports: [
     BrowserModule,
