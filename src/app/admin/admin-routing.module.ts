@@ -4,6 +4,7 @@ import { ClientComponent } from './client/client.component';
 import { AdminComponent } from './admin.component';
 import { AuthGuard } from '../helper/auth.guard';
 import { ProfileComponent } from '../user/profile/profile.component';
+import { NotificationsComponent } from '../user/notifications/notifications.component';
 
 const routes: Routes = [
   {
@@ -20,12 +21,18 @@ const routes: Routes = [
         component: ProfileComponent
       },
       {
+        path: 'notifications',
+        component: NotificationsComponent
+      },
+      {
         path: ':id',
         loadChildren: () => import('../monitor/monitor.module')
           .then(m => m.MonitorModule),
       }
     ]
-  }
+  },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

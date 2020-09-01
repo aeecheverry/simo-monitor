@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Client } from 'src/app/models/client';
+import { ClientService } from 'src/app/services/client.service';
+import { Router } from '@angular/router';
+//import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +10,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  id:string;
-  constructor(private activatedRoute: ActivatedRoute) { 
+  client: Client;
+  constructor(
+    private router: Router,
+    private clientService: ClientService
+  ) { 
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(paramsId => {
-      this.id = paramsId.id;
-      console.log(this.id);
-    });
+    this.client = history.state.client || {id:"xinwo"};
   }
 
 }

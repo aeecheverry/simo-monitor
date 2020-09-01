@@ -1,7 +1,12 @@
 <div class="main-content">
     <mat-card class="mat-elevation-z6">
+        <div class="mat-card-header-text">
+            <a mat-icon-button aria-label="home" routerLink="">
+                <mat-icon class="notifications-icon">arrow_back</mat-icon>
+            </a>
+        </div>
         <mat-card-content class="login-card">
-                    <div class="loginImageContainer" data-tilt="">
+                    <div class="loginImageContainer" data-tilt>
                         <img style="width: 350px;height: 350px;" src="../../assets/login.png" alt="Login Image">
                     </div>
                     <form [formGroup]="loginForm" class="loginForm" (ngSubmit)="onSubmit()">

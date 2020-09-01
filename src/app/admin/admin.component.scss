@@ -1,9 +1,14 @@
 /*Navigation*/
 mat-toolbar {
+    height: 53;
     position: sticky;
-    position: -webkit-sticky; /* For macOS/iOS Safari */
-    top: 0; /* Sets the sticky toolbar to be on top */
+    position: -webkit-sticky;
+    top: 0;
     z-index: 1000;
+}
+
+button:focus{
+    outline: 0;
 }
 
 .logo{
@@ -27,10 +32,16 @@ mat-toolbar {
     text-decoration: none;
 }
 
+.profileImageContainer{
+    width: 33px;
+    height: 33px;
+    margin-right: 10px;
+}
+
 .profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
+    width: 33px;
+    height: 33px;
+    border-radius: 33px;
     background: #263b5e;
 }
 
@@ -38,17 +49,58 @@ mat-toolbar {
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 18px;
-    line-height: 40px;
+    font-size: 16px;
+    line-height: 33px;
+}
+.notificationsIconContainer{
+    margin-right: 15px;
 }
 
 .notifications-icon{
-    width: 30px;
-    height: 30px;
-    margin: 3px 15px;
-    font-size: 27px;
+    width: 26px;
+    height: 26px;
+    font-size: 26px;
 }
 
-button:focus{
-    outline: 0;
+::ng-deep.mat-menu-panel {
+    max-width: none !important;
+    min-height: none !important;
+    border-radius: 7px !important;
+}
+
+.noticationsMenu{
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.notificationItem {
+    width: 330px;
+    height: 74px;
+}
+
+.noticationsMenuTitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 8px 15px;
+}
+
+.notificationsMenuSubtitles{
+    margin: 8px 15px;
+}
+
+.notificationImage{
+    width: 56px;
+    height: 56px;
+    border-radius: 56px;
+}
+
+.notification{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+}
+
+.message{
+    margin: 0px;
 }

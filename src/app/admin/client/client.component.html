@@ -1,8 +1,8 @@
-
+<div class="clientsContainer">
   <div class="container" style="padding-top: 20px;">
     <div class="row">
       <div class="col-4" *ngFor="let client of clients">
-        <mat-card class="example-card">
+        <mat-card class="card">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url('+ client.logoUrl +')'"></div>
             <mat-card-title><a routerLink="{{client.id}}" style="text-decoration: none;" (click)="onClickClient(client)">{{client.name | titlecase}}</a></mat-card-title>
@@ -47,5 +47,6 @@
       </div>  
     </div>
   </div>
+</div>
   
   

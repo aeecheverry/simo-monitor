@@ -12,7 +12,6 @@ import { first } from 'rxjs/internal/operators/first';
 })
 export class ClientComponent implements OnInit {
   clients: Client[];
-  //currentClients: Client[];
   constructor(
     private router: Router,
     private clientService: ClientService
@@ -33,7 +32,7 @@ export class ClientComponent implements OnInit {
   }
 
   onClickClient(client){
-    this.router.navigate(['client/'+client.id]);
+    this.router.navigate(['monitor/'+client.id],{state:{client:client}});
   }
 
 }

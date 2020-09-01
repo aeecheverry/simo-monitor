@@ -5,30 +5,66 @@ mat-sidenav-container {
 }
 
 mat-sidenav-content {
+    background: #f0f2f5;
     padding: 1rem;
 }
 
 mat-sidenav {
-    min-width: 170px;
+    //background: #f0f2f5;
+    min-width: 180px;
+    border:none;
     padding: 0px;
 }
 
 mat-nav-list {
     padding: 0px;
-    min-height: 48px;
+    min-height: 50px;
+}
+
+mat-nav-list > a{
+    min-height: 50px;
 }
 
 .menuTitle{
-    color: #222b45;
-    font-size: .8125rem;
-    font-weight: 450;
-    line-height: 1.5rem;
+    color: black;
+    font-size: .9375rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    line-height: 1.3333rem;
 }
 
 .menuIcon{
     color: #8f9bb3;
     font-size: 1.25rem;
-    margin: 0 .5rem 0 0;
     width: 1em;
+    text-align: center;
+}
+
+.dashboardIcon {
+   //color: linear-gradient(-135deg, #2193b0 , #6dd5ed);
+   color: #6dd5ed;
+}
+
+.ecommerceIcon {
+    color: #07a07a;
+ }
+
+.transactionsIcon {
+    color: #35607e;
+}
+
+.username{
+    color: black;
+    font-size: .9375rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    line-height: 1.3333rem;
+}
+
+.profileIcon{
+    color: #263b5e;
+    font-size: 1.7rem;
+    width: 1.7rem;
+    height: 1.7rem;
     text-align: center;
 }

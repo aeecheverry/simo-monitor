@@ -2,6 +2,10 @@ mat-card{
     border-radius: 10px;
 }
 
+.mat-card-header-text {
+    margin: 0px;
+}
+
 .login-card{
     width: 960px;
     background: #fff;
@@ -9,7 +13,7 @@ mat-card{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 6rem 6rem;
+    padding: 4.5rem 6rem;
 }
 
 .main-content{
@@ -23,7 +27,7 @@ mat-card{
 }
 
 .loginImageContainer{
-    width: 320px;
+    width: 350px;
 }
 
 .loginImageContainer img {

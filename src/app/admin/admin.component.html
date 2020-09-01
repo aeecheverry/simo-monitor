@@ -1,23 +1,59 @@
-<mat-toolbar class="mat-elevation-z2 main-nav">
+<mat-toolbar class="mat-elevation-z2 main-nav"  style="min-height: 53px !important; height: 53px !important;">
     
     <mat-icon class="logo">dashboard</mat-icon>
-    <a class="home" routerLink="../client">SIMOO</a>
+    <a class="home" routerLink="../monitor">SIMOO</a>
   
     <div class="spacer"></div>
-    <mat-icon class="notifications-icon"  matBadge="8" matBadgePosition="before">notifications_none</mat-icon>
+    <button mat-icon-button class="notificationsIconContainer" [matMenuTriggerFor]="notificationsMenu">
+        <mat-icon class="notifications-icon"  matBadge="8" matBadgePosition="before" matBadgeSize="small">notifications_none</mat-icon>
+    </button>
+    <mat-menu #notificationsMenu="matMenu" xPosition="before" class="noticationsMenu">
+        <div class="noticationsMenuTitle"> 
+            <h4>Notifications</h4>
+            <a routerLink="notifications">View all</a>
+        </div>
+        <div class="notificationsMenuSubtitles">
+            <h6>Earlier</h6>
+        </div>
+        <div mat-menu-item class="notificationItem">
+            <div class="notification">
+                <div style="width: 20%;">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/elasticsearch-226094.png" class="notificationImage" alt="Notification Image">
+                </div>
+                <div  style="width: 80%;" class="message">
+                    <p>The service <strong>OOM.TEST_SERVICE</strong> has failed <strong>5</strong>times in the last <span>2 hours</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="notificationsMenuSubtitles">
+            <h6>Previus</h6>
+        </div>
+        <div mat-menu-item class="notificationItem">
+            <div class="notification">
+                <div style="width: 20%;">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/elasticsearch-226094.png" class="notificationImage" alt="Notification Image">
+                </div>
+                <div  style="width: 80%;" class="message">
+                    <p class="message">The service <strong>OOM.TEST_SERVICE</strong> has failed <strong>5</strong>times in the last <span>2 hours</span></p>
+                </div>
+            </div>
+        </div>
+    </mat-menu>
     
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="profile">
+    <button mat-icon-button class="profileImageContainer" [matMenuTriggerFor]="userMenu" aria-label="profile">
         <div class="profile-image" >
             <div class="name">
                 {{profileName}}
              </div>
         </div>
     </button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-            <mat-icon>account_circle</mat-icon>
-            <span><a class="profile" routerLink="profile">Profile</a></span>
-        </button>
+    <mat-menu #userMenu="matMenu">
+        <a class="profile" routerLink="profile">
+            <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>Profile</span>
+            </button>
+        </a>
         <button mat-menu-item (click)="logout()">
             <mat-icon>input</mat-icon>
             <span>Logout</span>

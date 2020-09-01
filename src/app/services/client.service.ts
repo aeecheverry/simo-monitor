@@ -10,11 +10,17 @@ export class ClientService {
     private currentClientsSubject: BehaviorSubject<Client[]>;
     public currentClients: Observable<Client[]>;
 
+    private currentClientSubject: BehaviorSubject<Client>;
+    public currentClient: Observable<Client>;
+
     constructor( 
         private http: HttpClient
     ) { 
         this.currentClientsSubject = new BehaviorSubject<Client[]>(JSON.parse(localStorage.getItem('clients')));
         this.currentClients = this.currentClientsSubject.asObservable();
+
+        this.currentClientSubject = new BehaviorSubject<Client>(JSON.parse(localStorage.getItem('client')));
+        this.currentClient = this.currentClientSubject.asObservable();
     }
 
     public get currentClientsValue(): Client[] {
@@ -25,11 +31,20 @@ export class ClientService {
         const path = environment.path_client_list;
         const clients_endpoint = environment.apiHost+path;
         return this.http.get<any>(clients_endpoint).pipe(map(clients => {
-            //console.log('clients', JSON.stringify(clients,null,2))
             localStorage.setItem('clients', JSON.stringify(clients));
             this.currentClientsSubject.next(clients);
             return clients;
         }));
     } 
+
+    public get currentClientValue(): Client {
+        return this.currentClientSubject.value;
+    }
+
+    setClient(client){
+        if(client && client.id){
+            localStorage.setItem(client.id, JSON.stringify(client));
+        }
+    }
 
 }

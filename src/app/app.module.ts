@@ -29,13 +29,15 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { AdminModule} from './admin/admin.module';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

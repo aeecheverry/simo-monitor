@@ -49,9 +49,6 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // reset alerts on submit
-        //this.alertService.clear();
-
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -62,7 +59,7 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['client']);
+                    this.router.navigate(['monitor']);
                 },
                 error => {
                     //this.alertService.error(error);
