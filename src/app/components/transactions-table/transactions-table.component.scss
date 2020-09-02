@@ -29,7 +29,8 @@ tr.element-row:not(.expanded-row):active {
 
 .table-container {
   position: relative;
-  max-height: 500px;
+  max-height: 595px;
+  border-radius: 5px !important;
   overflow: auto;
 }
 

@@ -72,7 +72,6 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit, OnChan
       .pipe(
         startWith({}),
         switchMap(() => {
-          console.log()
           this.isLoadingResults = true;
           this.setSortBy(this.params,this.sort.active,this.sort.direction)
           return this.transactionsService.listTransactions(this.params);

@@ -6,7 +6,7 @@ import {FormControl} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith } from 'rxjs/internal/operators/startWith';
 import { map } from 'rxjs/internal/operators/map';
-import { TransactionService, TransactionsResult } from '../../services/transaction.service';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-transactions',
@@ -36,33 +36,46 @@ export class TransactionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.transactionsInputParams = {
+    this.setTransactionInputParams({
       queryString: "",
       filters: {},
       projection: [],
-      from: "now-2d",
-      to: "now",
-      limit: 10,
-      skip: 0,
-      sortBy: {},
-      clientId: this.client.id
-    }
-
+      from: "now-1d",
+      to: "now"
+    });
+    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      data=>{
+        this.services=data;
+        this.servicesFiltered = this.servicesControl.valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value, this.services))
+        );
+    });
+    
     this.searchOptions = this.searchControl.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value, this.lastSearch))
-      );
-
-    this.servicesFiltered = this.servicesControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value, this.services))
     );
   }
 
   private _filter(value: string, data:string[]): string[] {
     const filterValue = value.toLowerCase();
     return data.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  setTransactionInputParams({queryString, filters, projection, from, to}){
+    this.transactionsInputParams = {
+      queryString: queryString || "",
+      filters: filters || {},
+      projection: projection || [],
+      from: from || "now-1d",
+      to: to || "now",
+      limit: 10,
+      skip: 0,
+      sortBy: {},
+      clientId: this.client.id
+    }
   }
 
   search(){
@@ -73,22 +86,22 @@ export class TransactionsComponent implements OnInit {
     if(this.lastSearch.length > 10){
       this.lastSearch = this.lastSearch.slice(0,10);
     }
-    this.transactionsInputParams = {
+    this.setTransactionInputParams({
       queryString: this.searchControl.value,
       filters: {},
       projection: [],
-      from: "now-2d",
-      to: "now",
-      limit: 10,
-      skip: 0,
-      sortBy: {},
-      clientId: this.client.id
-    }
-    let services = this.transactionService.listServices(this.transactionsInputParams);
-    console.log(services);
+      from: "now-1d",
+      to: "now"
+    });
+    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      data=>{
+        this.services=data;
+        this.servicesFiltered = this.servicesControl.valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value, this.services))
+        );
+    });
   }
-
-  
 
   getClient(){
     let id = this.router.url.split("/")[2];
