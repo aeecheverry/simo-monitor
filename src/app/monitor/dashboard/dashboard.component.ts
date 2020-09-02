@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private clientService: ClientService
   ) { 
-    this.getClient();
   }
 
   ngOnInit(): void {

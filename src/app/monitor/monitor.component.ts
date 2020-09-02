@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MonitorComponent implements OnInit {
   menu = MENU_ITEMS;
   currentUser: User;
+  sidenavToggle = false;
   constructor(
     private authenticationService: AuthenticationService,
     private activatedRoute: ActivatedRoute,

@@ -25,6 +25,21 @@ mat-nav-list > a{
     min-height: 50px;
 }
 
+.sidenavToggle{
+    background: #263b5e;
+    color: white;
+    position: absolute;
+    border-radius: 0;
+    top: 8px;
+    left: 0px;
+    height: 30px;
+    width: 30px;
+}
+
+.mat-icon-button {
+    line-height: 30px !important;
+}
+
 .menuTitle{
     color: black;
     font-size: .9375rem;

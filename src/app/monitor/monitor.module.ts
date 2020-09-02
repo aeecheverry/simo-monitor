@@ -15,12 +15,21 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from '../helper/jwt.interceptor';
 import { ErrorInterceptor } from '../helper/error.interceptor';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -40,7 +49,16 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatButtonModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   exports:[
     MatSidenavModule,
@@ -48,7 +66,14 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatButtonModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ],
   providers:[
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -1,0 +1,758 @@
+[
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    },
+    {
+        "id": "5318f239-5059-4d78-a92b-0a706d9d7ab7",
+        "date": "2020-09-01T13:51:03.665Z",
+        "service": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+        "succeed": true,
+        "tags": [
+            "wom"
+        ],
+        "input": "{\"orderId\":\"2DBXE8KEBJUMMO\",\"securityModel\":{\"id\":\"wom_integration\",\"email\":\"integration@mow.cl\",\"mainGroup\":{\"id\":\"wom\",\"name\":\"WOM\"},\"name\":\"WOM Integration\",\"role\":\"client\"}}",
+        "output": "[{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]",
+        "subtraces": [
+            {
+                "name": "get_order",
+                "start": 1598968263666,
+                "end": 1598968263850,
+                "duration": 184
+            },
+            {
+                "name": "get_shipping_groups_by_order",
+                "start": 1598968263850,
+                "end": 1598968263936,
+                "duration": 86
+            }
+        ],
+        "trace": {
+            "name": "OOM.GET_SHIPPING_GROUPS_BY_ORDER",
+            "start": 1598968263665,
+            "end": 1598968263937,
+            "duration": 272
+        },
+        "logObservations": [
+            "Tue, 01 Sep 2020 13:51:03 GMT [5318f239-5059-4d78-a92b-0a706d9d7ab7] = ShippingGroups: [{\"id\":\"SG43G9S8KEBJUNYV\",\"orderId\":\"2DBXE8KEBJUMMO\",\"salesChannelId\":\"21729539\",\"shippingType\":\"HD\",\"history\":[{\"date\":\"2020-09-01T13:47:35.108Z\",\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"}]}],\"source\":{\"id\":\"CHP\",\"name\":\"CHP\",\"items\":[{\"sku\":\"001.008.1311\",\"quantity\":1,\"custom\":{\"series\":[\"89560900000393811185\"]}}]},\"target\":{\"customer\":{\"id\":\"15584048K\",\"name\":\"BARBARA CLAUDIA SERRA ESPINOZA    \",\"address\":\"CALLE EMILIO PACULL 1666\",\"location\":null,\"phone\":\"956847225\"}},\"status\":[{\"tag\":\"AWAITING_STORE_CONFIRMATION\",\"date\":\"2020-08-31T23:48:48.922Z\"},{\"tag\":\"PENDING_PACKAGE\",\"date\":\"2020-09-01T13:47:35.108Z\"},{\"tag\":\"AWAITING_DELIVERY\",\"date\":\"2020-09-01T13:51:00.511Z\"},{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"}],\"currentStatus\":{\"tag\":\"IN_TRANSIT\",\"date\":\"2020-09-01T13:51:02.460Z\"},\"seller\":{\"id\":\"1\"},\"site\":\"wom.cl\",\"estimatedDeliveryDate\":\"2020-08-28\",\"channel\":\"televentas\",\"orderCreationDate\":\"2020-08-26T15:45:03.681Z\"}]"
+        ]
+    },
+    {
+    "id" : "17a8a312-bd3b-45ed-8532-03464175efa4",
+    "date" : "2020-08-31T22:41:09.981Z",
+    "service" : "WOM_LISTENER[wom_set_stock_dev]",
+    "succeed" : false,
+    "tags" : [ ],
+    "input" : "{\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+    "output" : "Empty payload, no series found",
+    "subtraces" : [ ],
+    "trace" : {
+        "name" : "WOM_LISTENER[wom_set_stock_dev]",
+        "start" : 1598913669981,
+        "end" : 1598913670545,
+        "duration" : 564
+    },
+    "logObservations" : [
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Transaction Id: 17a8a312-bd3b-45ed-8532-03464175efa4",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Topic: wom_set_stock_dev",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Message: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}]}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event Name: set_stock, Event object: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"op\":\"set\",\"sourceId\":\"FSN\",\"items\":[{\"sku\":\"001.008.1307\",\"quantity\":100,\"custom\":{\"series\":[],\"motivo\":\"null\"}}],\"transaction\":{\"id\":\"17a8a312-bd3b-45ed-8532-03464175efa4\"}}",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Event set_stock [FSN]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = sourcesIds: [\"FSN\"]",
+        "Mon, 31 Aug 2020 22:41:09 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Endpoint: https://womdev-oim.omnixsystem.com/v3/inventory/source",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = OMNIX_INVENTORY_MANAGEMENT_QUERY_SOURCES response: {\"transactionId\":\"17a8a312-bd3b-45ed-8532-03464175efa4\",\"code\":200,\"message\":[{\"id\":\"FSN\",\"type\":\"physical\",\"name\":\"Bodega Fusion\"}]}",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Request: []",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Error: Empty payload, no series found",
+        "Mon, 31 Aug 2020 22:41:10 GMT [17a8a312-bd3b-45ed-8532-03464175efa4] = Empty payload, no series found"
+    ]
+    }
+]

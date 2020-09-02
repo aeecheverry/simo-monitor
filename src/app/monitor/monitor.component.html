@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened class="mat-elevation-z1">
         <mat-nav-list style="padding-top:10px;">
             <a mat-list-item routerLink="../profile">
@@ -13,7 +13,9 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <!--<button (click)="sidenav.toggle()">toggle</button>-->
+        <button mat-icon-button (click)="sidenav.toggle()" (click)="sidenavToggle = !sidenavToggle" class="sidenavToggle">
+            <mat-icon class="sidenavToggleIcon">{{sidenavToggle ?  "chevron_right" : "chevron_left"}}</mat-icon> 
+        </button>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

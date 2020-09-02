@@ -3,12 +3,13 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/auth.service';
 import { User } from '../models/user';
 import { ClientService } from '../services/client.service';
+import { TransactionService } from '../services/transaction.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
-  providers: [ClientService]
+  providers: [ClientService, TransactionService]
 })
 export class AdminComponent implements OnInit {
   currentUser: User;

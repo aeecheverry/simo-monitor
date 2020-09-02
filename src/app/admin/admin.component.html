@@ -2,8 +2,11 @@
     
     <mat-icon class="logo">dashboard</mat-icon>
     <a class="home" routerLink="../monitor">SIMOO</a>
-  
+    
     <div class="spacer"></div>
+    <button mat-icon-button class="notificationsIconContainer">
+        <a routerLink="../monitor"  class="notifications-icon"><mat-icon>home</mat-icon></a>
+    </button>
     <button mat-icon-button class="notificationsIconContainer" [matMenuTriggerFor]="notificationsMenu">
         <mat-icon class="notifications-icon"  matBadge="8" matBadgePosition="before" matBadgeSize="small">notifications_none</mat-icon>
     </button>
