@@ -12,7 +12,7 @@ export class TransactionService {
         private http: HttpClient
     ) {}
 
-    listServices(data: object) {
+    listServices(data: TransactionInputAPI) : Observable<any> {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
         });
@@ -29,7 +29,7 @@ export class TransactionService {
             'Content-Type': 'application/json',
         });
         const options = { headers: headers };
-        return this.http.post<TransactionOutputAPI>(
+        return this.http.post<ListTransactionOutputAPI>(
             environment.apiHost + environment.path_transactions_list, data, options
         ).pipe(map(data => {
             let transactions: TransactionsResult = data.message;
@@ -52,7 +52,7 @@ export interface TransactionInputAPI {
     clientId: string
 }
 
-export interface TransactionOutputAPI {
+export interface ListTransactionOutputAPI {
     code:number,
     message: {
         size: number,

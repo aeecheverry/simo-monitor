@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Transaction } from '../../models/transaction';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -22,7 +22,7 @@ import { TransactionService } from '../../services/transaction.service';
   ],
 })
 
-export class TransactionsTableComponent implements OnInit, AfterViewInit {
+export class TransactionsTableComponent implements OnInit, AfterViewInit, OnChanges {
   
   @Input() params: TransactionInputAPI;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -44,6 +44,10 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit {
   constructor(
     private transactionsService: TransactionService
   ) { }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    this.listTransactions();
+  }
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
@@ -59,6 +63,10 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    //this.listTransactions();
+  }
+  
+  listTransactions(){
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
@@ -83,7 +91,7 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit {
           return of([]);
         })
       ).subscribe(data => this.dataSource = new MatTableDataSource<Transaction>(data));
-  }
+  } 
 
   onClickRow(transaction){
     this.selectedTransaction = transaction;
