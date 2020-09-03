@@ -33,6 +33,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { MonacoEditorModule } from 'ngx-monaco-editor';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+
 @NgModule({
   declarations: [
     DashboardComponent, 
@@ -62,7 +65,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule, 
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MonacoEditorModule.forRoot(),
+    ClipboardModule
   ],
   exports:[
     MatSidenavModule,

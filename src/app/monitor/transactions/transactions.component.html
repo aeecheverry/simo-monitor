@@ -73,7 +73,7 @@
                   [formControl]="servicesControl">
                 </mat-form-field>
             </form>
-            <mat-selection-list #servicesv [multiple]="false" [(ngModel)]="selectedService" (ngModelChange)="onSelectedService($event)">
+            <mat-selection-list #servicesv [multiple]="false" [(ngModel)]="selectedService" (ngModelChange)="onSelectedService($event)" style="max-height: 550px;">
               <mat-list-option *ngFor="let service of servicesFiltered | async" [value]="service" class="list-item">
                 {{service}}
               </mat-list-option>

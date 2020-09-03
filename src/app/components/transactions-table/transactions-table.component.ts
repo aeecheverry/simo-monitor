@@ -31,8 +31,7 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit, OnChan
   dataSource = new MatTableDataSource();
   columnsToDisplay: string[] = ['date', 'id', 'succeed'];
   expandedElement: Transaction | null;
-  
-  pageSizeOptions: number[] = [10, 25, 50];
+ 
   selectedTransaction: Transaction;
 
   editorOptions = {theme: 'vs', language: 'json', readOnly:true};
@@ -63,10 +62,10 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit, OnChan
   }
 
   ngAfterViewInit() {
-    //this.listTransactions();
   }
   
   listTransactions(){
+    this.expandedElement = null;
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(

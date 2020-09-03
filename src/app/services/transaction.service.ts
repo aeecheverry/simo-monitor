@@ -11,7 +11,7 @@ export class TransactionService {
         private http: HttpClient
     ) {}
 
-    listServices(data: TransactionInputAPI) {
+    listServices(data: ListServicesInputAPI) {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
         });
@@ -25,7 +25,7 @@ export class TransactionService {
         }));
     }
 
-    listTransactions(data: TransactionInputAPI) : Observable<ListTransactionsResult> {
+    listTransactions(data: ListTransactionInputAPI) : Observable<ListTransactionsResult> {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
         });
@@ -41,7 +41,7 @@ export class TransactionService {
 
 }
 
-export interface TransactionInputAPI {
+export interface ListTransactionInputAPI {
     queryString: string,
     filters: object,
     projection:string[],
@@ -50,6 +50,16 @@ export interface TransactionInputAPI {
     limit: number,
     skip: number,
     sortBy: any, 
+    clientId: string
+}
+
+export interface ListServicesInputAPI {
+    queryString: string,
+    filters: object,
+    projection:string[],
+    from: string,
+    to: string,
+    servicesLimit: number,
     clientId: string
 }
 

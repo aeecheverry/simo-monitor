@@ -18,17 +18,17 @@ export class TransactionsComponent implements OnInit {
   client: Client;
   
   searchControl = new FormControl();
-  lastSearch: string [] = ["query"];
+  lastSearch: string [] = [];
   searchOptions: Observable<string[]>;
 
   servicesControl = new FormControl();
-  services: string[] = ["OOM.SERVICE01","OOM.SERVICE02"];
+  services: string[];
   servicesFiltered: Observable<string[]>;
   selectedService :string;
 
   succeedSelected: string;
 
-  from:string;
+  from: string;
   to: string;
 
   constructor(
@@ -40,14 +40,15 @@ export class TransactionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setTransactionInputParams({
+    let params = {
       queryString: "",
       filters: {},
       projection: [],
       from: "now-1d",
       to: "now"
-    });
-    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+    }
+    this.setTransactionInputParams(params);
+    this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;
         this.servicesFiltered = this.servicesControl.valueChanges.pipe(
@@ -82,6 +83,19 @@ export class TransactionsComponent implements OnInit {
     }
   }
 
+  getServiceInputParams({queryString, filters, projection, from, to}){
+    let params = {
+        queryString: queryString || "",
+        filters: filters || {},
+        projection: projection || [],
+        from: from || "now-1d",
+        to: to || "now",
+        servicesLimit: 200,
+        clientId: this.client.id
+    }
+    return params;
+  }
+
   search(){
     if(this.lastSearch.includes(this.searchControl.value)){
       this.lastSearch = this.lastSearch.filter(item => item !== this.searchControl.value)
@@ -90,14 +104,15 @@ export class TransactionsComponent implements OnInit {
     if(this.lastSearch.length > 10){
       this.lastSearch = this.lastSearch.slice(0,10);
     }
-    this.setTransactionInputParams({
+    let params = {
       queryString: this.searchControl.value,
       filters: {},
       projection: [],
-      from: "now-1d",
-      to: "now"
-    });
-    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      from: this.from,
+      to: this.to
+    }
+    this.setTransactionInputParams(params);
+    this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;
         this.servicesFiltered = this.servicesControl.valueChanges.pipe(
@@ -112,13 +127,14 @@ export class TransactionsComponent implements OnInit {
     if(this.selectedService){
       filters["service.keyword"] = this.selectedService;
     }
-    this.setTransactionInputParams({
+    let params = {
       queryString: this.searchControl.value,
       filters: filters,
       projection: [],
-      from: "now-1d",
-      to: "now"
-    });
+      from: this.from,
+      to: this.to
+    }
+    this.setTransactionInputParams(params);
   }
 
   onSelectedSucceed(event){
@@ -129,14 +145,16 @@ export class TransactionsComponent implements OnInit {
     if(this.succeedSelected !== "default"){
       filters["succeed"] = this.succeedSelected
     }
-    this.setTransactionInputParams({
+    let params = {
       queryString: this.searchControl.value,
       filters: filters,
       projection: [],
-      from: "now-1d",
-      to: "now"
-    });
-    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      from: this.from,
+      to: this.to
+    }
+    this.setTransactionInputParams(params);
+    delete filters["service.keyword"];
+    this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;
         this.servicesFiltered = this.servicesControl.valueChanges.pipe(
@@ -166,14 +184,16 @@ export class TransactionsComponent implements OnInit {
     if(this.succeedSelected !== "default"){
       filters["succeed"] = this.succeedSelected
     }
-    this.setTransactionInputParams({
+    let params = {
       queryString: this.searchControl.value,
       filters: filters,
       projection: [],
       from: this.from,
       to: this.to
-    });
-    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+    }
+    this.setTransactionInputParams(params);
+    delete filters["service.keyword"];
+    this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;
         this.servicesFiltered = this.servicesControl.valueChanges.pipe(

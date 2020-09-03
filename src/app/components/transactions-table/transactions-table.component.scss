@@ -29,7 +29,7 @@ tr.element-row:not(.expanded-row):active {
 
 .table-container {
   position: relative;
-  max-height: 595px;
+  max-height: 800px;
   border-radius: 5px !important;
   overflow: auto;
 }
@@ -51,4 +51,35 @@ tr.element-row:not(.expanded-row):active {
   color: #980000;
   max-width: 360px;
   text-align: center;
+}
+
+.table-logs {
+    height: auto;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.monaco {
+  height: 100%;
+}
+
+.monaco-input-container{
+  height: 350px;
+}
+
+.monaco-output-container{
+  height: 350px;
+}
+
+button:focus{
+  outline: 0;
+}
+
+mat-tab > .row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.monaco-transaction-container{
+  height: 700px;
 }

@@ -17,11 +17,11 @@ const routes: Routes = [
         component: ClientComponent,
       },
       {
-        path: 'profile',
+        path: 'user/profile',
         component: ProfileComponent
       },
       {
-        path: 'notifications',
+        path: 'user/notifications',
         component: NotificationsComponent
       },
       {
