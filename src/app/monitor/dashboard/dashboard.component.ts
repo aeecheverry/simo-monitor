@@ -44,22 +44,21 @@ export class DashboardComponent implements OnInit {
     return `/app/kibana?#/dashboard/${this.client.dashboards.transactions.id}?embed=true&_g=`+encodeURIComponent(`(refreshInterval:(pause:!t,value:0),time:(from:'${this.from}',to:'${this.to}'))`);
   }
 
-  changeEventRange(event){
-    this.changeDatesValues(event.value.begin,event.value.end);
-    this.loadDashboard();
-  }
-  inputEventRange(type,event){
-    this.changeDatesValues(event.value.begin,event.value.end);
-    this.loadDashboard();
+  onDateChangeEvent(event,piker){
+    if(piker === 'start'){
+      let begin = new Date(event);
+      begin.setHours(0,0,0,0);
+      this.from = new Date(begin.getTime()-(begin.getTimezoneOffset()*60000)).toISOString();
+    }else{
+      let end = new Date(event);
+      end.setHours(23,59,59,999);
+      this.to = new Date(end.getTime()-(end.getTimezoneOffset()*60000)).toISOString();
+    }
   }
 
-  changeDatesValues(from, to){
-		let begin = new Date(from);
-		begin.setHours(0,0,0,0);
-		this.from = new Date(begin.getTime()-(begin.getTimezoneOffset()*60000)).toISOString();
-		let end = new Date(to);
-		end.setHours(23,59,59,999);
-		this.to = new Date(end.getTime()-(end.getTimezoneOffset()*60000)).toISOString();
-	}
+  onRefreshButton(){
+    console.log(this.from, this.to);
+    this.loadDashboard()
+  }
 
 }

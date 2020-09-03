@@ -2,7 +2,7 @@
 
   <div class="loading-shade"
         *ngIf="isLoadingResults || isRateLimitReached">
-      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+      <mat-spinner *ngIf="isLoadingResults" [diameter]="50"></mat-spinner>
       <div class="rate-limit-reached" *ngIf="isRateLimitReached">
         Problem to load transactions. Try again.
       </div>

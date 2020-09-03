@@ -5,3 +5,13 @@
 .dashboardContainer{
     margin-top: 15px;
 }
+
+.controlsContainer{
+    padding: 0;
+    margin-top: 5px;
+    height: 45px;
+}
+
+button:focus{
+    outline: 0;
+}

@@ -24,8 +24,12 @@ export class TransactionsComponent implements OnInit {
   servicesControl = new FormControl();
   services: string[] = ["OOM.SERVICE01","OOM.SERVICE02"];
   servicesFiltered: Observable<string[]>;
+  selectedService :string;
 
   succeedSelected: string;
+
+  from:string;
+  to: string;
 
   constructor(
     private router: Router,
@@ -92,6 +96,83 @@ export class TransactionsComponent implements OnInit {
       projection: [],
       from: "now-1d",
       to: "now"
+    });
+    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      data=>{
+        this.services=data;
+        this.servicesFiltered = this.servicesControl.valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value, this.services))
+        );
+    });
+  }
+
+  onSelectedService(event){
+    let filters = {};
+    if(this.selectedService){
+      filters["service.keyword"] = this.selectedService;
+    }
+    this.setTransactionInputParams({
+      queryString: this.searchControl.value,
+      filters: filters,
+      projection: [],
+      from: "now-1d",
+      to: "now"
+    });
+  }
+
+  onSelectedSucceed(event){
+    let filters = {};
+    if(this.selectedService){
+      filters["service.keyword"] = this.selectedService;
+    }
+    if(this.succeedSelected !== "default"){
+      filters["succeed"] = this.succeedSelected
+    }
+    this.setTransactionInputParams({
+      queryString: this.searchControl.value,
+      filters: filters,
+      projection: [],
+      from: "now-1d",
+      to: "now"
+    });
+    this.transactionService.listServices(this.transactionsInputParams).subscribe(
+      data=>{
+        this.services=data;
+        this.servicesFiltered = this.servicesControl.valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value, this.services))
+        );
+    });
+  }
+
+  onDateChangeEvent(event,piker){
+    console.log(event);
+    if(piker === 'start'){
+      let begin = new Date(event);
+      begin.setHours(0,0,0,0);
+      this.from = new Date(begin.getTime()-(begin.getTimezoneOffset()*60000)).toISOString();
+    }else{
+      let end = new Date(event);
+      end.setHours(23,59,59,999);
+      this.to = new Date(end.getTime()-(end.getTimezoneOffset()*60000)).toISOString();
+    }
+  }
+
+  onRefreshButton(){
+    let filters = {};
+    if(this.selectedService){
+      filters["service.keyword"] = this.selectedService;
+    }
+    if(this.succeedSelected !== "default"){
+      filters["succeed"] = this.succeedSelected
+    }
+    this.setTransactionInputParams({
+      queryString: this.searchControl.value,
+      filters: filters,
+      projection: [],
+      from: this.from,
+      to: this.to
     });
     this.transactionService.listServices(this.transactionsInputParams).subscribe(
       data=>{
