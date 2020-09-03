@@ -29,7 +29,6 @@ export class AuthenticationService {
             .pipe(map(data => {
                 let user = data.message;
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                //console.log('Userdb:'+JSON.stringify(user,null,2))
                 this.currentUserSubject.next(user);
                 return user;
             }));

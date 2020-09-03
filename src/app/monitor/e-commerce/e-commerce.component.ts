@@ -43,7 +43,6 @@ export class ECommerceComponent implements OnInit {
   }
 
   onDateChangeEvent(event,piker){
-    console.log(event);
     if(piker === 'start'){
       let begin = new Date(event.value);
       begin.setHours(0,0,0,0);

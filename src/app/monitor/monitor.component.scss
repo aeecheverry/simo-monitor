@@ -83,3 +83,7 @@ mat-nav-list > a{
     height: 1.7rem;
     text-align: center;
 }
+
+button:focus{
+    outline: 0;
+}

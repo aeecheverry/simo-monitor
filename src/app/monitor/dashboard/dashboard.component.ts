@@ -57,7 +57,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onRefreshButton(){
-    console.log(this.from, this.to);
     this.loadDashboard()
   }
 
