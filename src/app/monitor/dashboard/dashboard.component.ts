@@ -46,11 +46,11 @@ export class DashboardComponent implements OnInit {
 
   onDateChangeEvent(event,piker){
     if(piker === 'start'){
-      let begin = new Date(event);
+      let begin = new Date(event.value);
       begin.setHours(0,0,0,0);
       this.from = new Date(begin.getTime()-(begin.getTimezoneOffset()*60000)).toISOString();
     }else{
-      let end = new Date(event);
+      let end = new Date(event.value);
       end.setHours(23,59,59,999);
       this.to = new Date(end.getTime()-(end.getTimezoneOffset()*60000)).toISOString();
     }
