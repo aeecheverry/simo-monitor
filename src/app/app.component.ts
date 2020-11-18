@@ -10,7 +10,7 @@ import { User } from './models/user';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simoo-monitor';
+  title = 'simo-monitor';
 
   currentUser: User;
 

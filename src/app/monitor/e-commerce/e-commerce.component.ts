@@ -35,7 +35,7 @@ export class ECommerceComponent implements OnInit {
   }
 
   loadDashboard(){
-    this.orders_dashboard_url = this.sanitizer.bypassSecurityTrustResourceUrl(`https://simoo-elasticsearch.omnixsystem.com/s/${environment.production ? 'production' : 'development'}${this.getTransactionDashboardPath(this.from,this.to)}`);
+    this.orders_dashboard_url = this.sanitizer.bypassSecurityTrustResourceUrl(`https://${this.client.id}${environment.production ? '' : 'dev'}-elasticsearch.omnixsystem.com/s/${environment.production ? 'production' : 'development'}${this.getTransactionDashboardPath(this.from,this.to)}`);
   }
 
   getTransactionDashboardPath (to,from){

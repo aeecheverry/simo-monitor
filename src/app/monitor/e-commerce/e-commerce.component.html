@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
     </div>
@@ -7,25 +7,25 @@
     </div>
     <mat-divider></mat-divider>
     <div class="row controlsContainer">
-        <div class="col-md-4">
-            <div class="row" style="padding-left: 0;">
-              <mat-form-field class="col-md-6 col" style="padding-left: 0;">
-                <mat-label>Start date</mat-label>
-                <input matInput [matDatepicker]="pickerStart" (dateChange)="onDateChangeEvent($event,'start')">
-                <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
-                <mat-datepicker #pickerStart></mat-datepicker>
-              </mat-form-field>
-              <mat-form-field class="col-md-6 col">
-                <mat-label>End date</mat-label>
-                <input matInput [matDatepicker]="pickerEnd" (dateChange)="onDateChangeEvent($event,'end')">
-                <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
-                <mat-datepicker #pickerEnd></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="col-md-2" style="padding-top: 9px;">
-            <button mat-raised-button color="primary" class="refresh-button" (click)="onRefreshButton()">Refresh<mat-icon>refresh</mat-icon></button>
-          </div>
+      <div class="col-md-4">
+        <div class="row" style="padding-left: 0;">
+          <mat-form-field class="col-md-6 col" style="padding-left: 0;">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="pickerStart" (dateChange)="onDateChangeEvent($event,'start')">
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="col-md-6 col">
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="pickerEnd" (dateChange)="onDateChangeEvent($event,'end')">
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-2" style="padding-top: 9px;">
+        <button mat-raised-button color="primary" class="refresh-button" (click)="onRefreshButton()">Refresh<mat-icon>refresh</mat-icon></button>
+      </div>
     </div>
     <div class="row dashboardContainer">
         <iframe style="border: none;" [src]="orders_dashboard_url" height="700" width="100%"></iframe>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "simoo-monitor": {
+    "simo-monitor": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/simoo-monitor",
+            "outputPath": "dist/simo-monitor",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "simoo-monitor:build"
+            "browserTarget": "simo-monitor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "simoo-monitor:build:production"
+              "browserTarget": "simo-monitor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simoo-monitor:build"
+            "browserTarget": "simo-monitor:build"
           }
         },
         "test": {
@@ -121,18 +121,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "simoo-monitor:serve"
+            "devServerTarget": "simo-monitor:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "simoo-monitor:serve:production"
+              "devServerTarget": "simo-monitor:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "simoo-monitor",
+  "defaultProject": "simo-monitor",
   "cli": {
     "analytics": "1f2b7f0b-38e2-4dad-931f-cfff16a93e3b"
   }

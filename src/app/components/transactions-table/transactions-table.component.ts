@@ -54,7 +54,7 @@ export class TransactionsTableComponent implements OnInit, AfterViewInit, OnChan
   }
 
   setSortBy(params, sort, order){
-    if(sort){
+    if(order !== ""){
       params.sortBy = {
         [sort]:order
       }

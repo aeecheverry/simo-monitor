@@ -32,6 +32,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -67,7 +69,9 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     MatDatepickerModule,
     MatNativeDateModule,
     MonacoEditorModule.forRoot(),
-    ClipboardModule
+    ClipboardModule,
+    MatTooltipModule,
+    MatDialogModule
   ],
   exports:[
     MatSidenavModule,
@@ -83,13 +87,14 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
     MatInputModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
   ],
   providers:[
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ]
 })
 export class MonitorModule { }

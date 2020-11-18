@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
     </div>
@@ -6,10 +6,54 @@
         <h2 class="clientName">{{client.name | uppercase}}</h2>
     </div>
     <mat-divider></mat-divider>
-    <div class="row">
-
+    <div class="row controlsContainer">
+      <div class="col-md-4">
+        <div class="row" style="padding-left: 0;">
+          <mat-form-field class="col-md-6 col" style="padding-left: 0;">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="pickerStart" (dateChange)="onDateChangeEvent($event,'start')">
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="col-md-6 col">
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="pickerEnd" (dateChange)="onDateChangeEvent($event,'end')">
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-2" style="padding-top: 9px;">
+        <button mat-raised-button color="primary" class="refresh-button" (click)="generateReport()">Generate <mat-icon>donut_large</mat-icon></button>
+      </div>
     </div>
-    <div class="row reportsContainer">
-        <h6>This feature will be available in the next version</h6>
+    <div class="row reportsContainer" style="padding-left: 0px;">
+        <!--<div *ngIf="reportList.length" class="col-12 pt-0">-->
+            <table class="table table__normal table_gray p-0 m-0">
+                <thead>
+                    <tr>
+                        <th colspan="5" class="text-left">REPORTES GENERADOS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Desde</td>
+                        <td>Hasta</td>
+                        <td>Tipo</td>
+                        <td></td>
+                        <td>Acciones</td>
+                    </tr>
+                    <tr *ngFor="let report of reportList; let index = i">
+                        <td>{{report.from  | date:"MMM dd, yyyy"}}</td>
+                        <td>{{report.to  | date:"MMM dd, yyyy"}}</td>
+                        <td>{{report.type | uppercase}}</td>
+                        <td><mat-progress-spinner *ngIf="!report.processed" class="spinner" mode="indeterminate" diameter="20"></mat-progress-spinner></td>
+                        <td>
+                            <a class="button" [ngClass]="{'reportDisabled':!report.processed}" [href]="report.url" target="_blank" style="max-width: 50px; display: inline-block;"><i class="material-icons button--success">search</i></a>
+                            <a class="button" (click)="deleteReport(index)" style="max-width: 50px; display: inline-block; margin-left: 5px;"><i class="material-icons button--danger pointer">delete</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </div>
 </div>

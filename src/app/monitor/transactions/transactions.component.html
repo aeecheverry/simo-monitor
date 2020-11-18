@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
 
     </div>
     <div class="row">
         <h2 class="clientName">{{client.name | uppercase}}</h2>
+        <h6 class="clientName">{{selectedService}}</h6>
     </div>
     <mat-divider></mat-divider>
     <div class="row controlsContainer">
@@ -64,7 +65,7 @@
         <div class="col-md-10" style="padding:0;">
             <app-transactions-table [params]="transactionsInputParams" class="transactionsTable"></app-transactions-table>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2" style="padding-right: 0px;">
             <form>
                 <mat-form-field>
                   <mat-label>Service</mat-label>
@@ -73,8 +74,12 @@
                   [formControl]="servicesControl">
                 </mat-form-field>
             </form>
-            <mat-selection-list #servicesv [multiple]="false" [(ngModel)]="selectedService" (ngModelChange)="onSelectedService($event)" style="max-height: 550px;">
-              <mat-list-option *ngFor="let service of servicesFiltered | async" [value]="service" class="list-item">
+            <mat-selection-list #servicesv [multiple]="false" [(ngModel)]="selectedService" (ngModelChange)="onSelectedService($event)" style="max-height: 550px;min-width: 190px;">
+              <mat-list-option 
+                *ngFor="let service of servicesFiltered | async" 
+                [value]="service" class="list-item"
+                matTooltip="{{service}}"
+                [matTooltipPosition]="'left'">
                 {{service}}
               </mat-list-option>
             </mat-selection-list>

@@ -22,12 +22,6 @@ export const MENU_ITEMS = [
       icon: 'description',
       link: 'reports',
       iconClass: 'reportsIcon'
-    },
-    {
-      title: 'Billing',
-      icon: 'request_quote',
-      link: 'billing',
-      iconClass: 'billingIcon'
     }
   ];
   

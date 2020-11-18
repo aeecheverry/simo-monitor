@@ -4,8 +4,8 @@
     "email" : "aecheverry@formax.cl",
     "role" : "monitor_root",
     "mainGroup" : {
-        "id" : "simoo",
-        "name" : "SIMOO"
+        "id" : "simo",
+        "name" : "simo"
     },
     "authentication" : {
         "mode" : "UserPassword",

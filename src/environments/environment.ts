@@ -5,13 +5,18 @@
 export const environment = {
   production: false,
   apiHost: "https://r09o8rvlz1.execute-api.us-west-1.amazonaws.com/dev",
-  kibana_endpoint: "simoo-elasticsearch.omnixsystem.com",
+  reports_bucket_url: "https://wom-omnix-report-dev.s3.us-east-2.amazonaws.com/orders/",
+  apiUrl: 'https://womdev-oma.omnixsystem.com/v3/monitor',
+  notificationUrl: "ec2-3-12-111-25.us-east-2.compute.amazonaws.com",
+  socket_notifications_port: 3000,
   
   path_transactions_list_services: "/transactions/services",
   path_transactions_list: "/transactions",
 
   path_client: "/client",
   path_client_list: "/client/list",
+
+  path_report: "/report",
 
   path_billing_activity: "/billing/activity",
   path_billing_invoices: "/billing/invoices"

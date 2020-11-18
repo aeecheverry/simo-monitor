@@ -1,5 +1,5 @@
 <div class="clientsContainer">
-  <div class="container" style="padding-top: 20px;">
+  <div class="container-fluid" style="padding-top: 20px;">
     <div class="row">
       <div class="col-sm col-md col-lg-4" *ngFor="let client of clients">
         <mat-card class="card">
@@ -7,7 +7,7 @@
             <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url('+ client.logoUrl +')'"></div>
             <mat-card-title><a routerLink="{{client.id}}" style="text-decoration: none;" (click)="onClickClient(client)">{{client.name | titlecase}}</a></mat-card-title>
             <mat-card-subtitle>
-              {{client.deployment.type}} <span style="background-color:rgb(202, 202, 202);border-radius: 2px;color: black;padding:2px">v{{client.deployment.version}}</span>
+              {{client.deployment.type}}<span style="background-color:rgb(202, 202, 202);border-radius: 2px;color: black;padding:2px">v{{client.deployment.version}}</span>
             </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
@@ -29,11 +29,11 @@
               <div class="row">
                 <div class="col-6">
                   <h6 class="integration-title">MongoDB</h6>
-                  <p>{{client.integrations.mongodb.ram}} RAM {{client.integrations.mongodb.storage}} Storage</p>
+                  <p>{{client.integrations.mongodb.ram}} RAM</p>
                 </div>
                 <div class="col-6">
                   <h6 class="integration-title">Elasticsearch</h6>
-                  <p>{{client.integrations.elasticsearch.ram}} RAM {{client.integrations.elasticsearch.storage}} Storage</p>
+                  <p>{{client.integrations.elasticsearch.ram}} RAM</p>
                 </div>
               </div>
             </div>

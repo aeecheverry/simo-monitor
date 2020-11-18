@@ -127,6 +127,9 @@ export class TransactionsComponent implements OnInit {
     if(this.selectedService){
       filters["service.keyword"] = this.selectedService;
     }
+    if(this.succeedSelected !== "default"){
+      filters["succeed"] = this.succeedSelected
+    }
     let params = {
       queryString: this.searchControl.value,
       filters: filters,
@@ -139,9 +142,10 @@ export class TransactionsComponent implements OnInit {
 
   onSelectedSucceed(event){
     let filters = {};
-    if(this.selectedService){
+    this.selectedService = "";
+    /*if(this.selectedService){
       filters["service.keyword"] = this.selectedService;
-    }
+    }*/
     if(this.succeedSelected !== "default"){
       filters["succeed"] = this.succeedSelected
     }
@@ -153,7 +157,7 @@ export class TransactionsComponent implements OnInit {
       to: this.to
     }
     this.setTransactionInputParams(params);
-    delete filters["service.keyword"];
+    //delete filters["service.keyword"];
     this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;
@@ -178,9 +182,10 @@ export class TransactionsComponent implements OnInit {
 
   onRefreshButton(){
     let filters = {};
-    if(this.selectedService){
+    this.selectedService = "";
+    /*if(this.selectedService){
       filters["service.keyword"] = this.selectedService;
-    }
+    }*/
     if(this.succeedSelected !== "default"){
       filters["succeed"] = this.succeedSelected
     }
@@ -192,7 +197,7 @@ export class TransactionsComponent implements OnInit {
       to: this.to
     }
     this.setTransactionInputParams(params);
-    delete filters["service.keyword"];
+    //delete filters["service.keyword"];
     this.transactionService.listServices(this.getServiceInputParams(params)).subscribe(
       data=>{
         this.services=data;

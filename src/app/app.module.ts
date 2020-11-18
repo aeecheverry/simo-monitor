@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { AdminModule} from './admin/admin.module';
+import { ErrorInterceptor } from './helper/error.interceptor';
 //import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 
 @NgModule({
